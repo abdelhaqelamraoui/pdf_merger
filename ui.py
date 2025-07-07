@@ -53,6 +53,11 @@ class PDFMergerApp(tk.Tk):
         merge_btn = ttk.Button(self, text="Merge PDFs", command=self.merge_pdfs_ui)
         merge_btn.pack(pady=20)
 
+        # Add author label in the bottom right as a clickable link
+        author_label = ttk.Label(self, text="By Abdelhaq El Amraoui", foreground="blue", cursor="hand2", background="#f0f0f0", font=("Segoe UI", 9, "italic"))
+        author_label.place(relx=1.0, rely=1.0, anchor="se", x=-10, y=-10)
+        author_label.bind("<Button-1>", lambda e: self.open_github())
+
     def add_pdfs(self):
         files = filedialog.askopenfilenames(
             title="Select PDF files",
@@ -118,6 +123,10 @@ class PDFMergerApp(tk.Tk):
                 os.system(f'xdg-open "{path}"')
         except Exception as e:
             messagebox.showerror("Error", f"Could not open file:\n{e}")
+
+    def open_github(self):
+        import webbrowser
+        webbrowser.open_new("https://github.com/abdelhaqelamraoui/pdf_merger")
 
     # Drag-and-drop reordering for listbox
     def on_listbox_click(self, event):
