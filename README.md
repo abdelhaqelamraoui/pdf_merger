@@ -2,7 +2,7 @@
 
 ## Download
 
-[![Download for Windows](https://img.shields.io/badge/Download-Windows%20Executable-blue?logo=windows)](dist/main.exe)
+[![Download for Windows](https://img.shields.io/badge/Download-Windows%20Executable-blue?logo=windows)](dist/PDF-Merger.exe)
 
 ---
 
